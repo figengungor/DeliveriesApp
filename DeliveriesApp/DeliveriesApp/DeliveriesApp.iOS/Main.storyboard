@@ -21,37 +21,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="452" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Write your email">
-                                <rect key="frame" x="20" y="353" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="452" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write your email">
+                                <rect key="frame" x="20" y="315" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="453" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Write your password">
-                                <rect key="frame" x="20" y="391" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="453" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write your password">
+                                <rect key="frame" x="20" y="353" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="455" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="20" y="439" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="455" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="399" width="374" height="30"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.070588235294117646" green="0.33725490196078434" blue="0.94117647058823528" alpha="1"/>
                                 <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
+                                <connections>
+                                    <action selector="SigninButton_TouchUpInside:" destination="BYZ-38-t0r" id="697" eventType="touchUpInside"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="456" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="318" y="490" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="456" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="337" y="444" width="57" height="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 </state>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint id="527" firstItem="453" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="528" firstItem="453" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY"/>
+                            <constraint id="529" firstItem="453" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="530" firstItem="453" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="533" firstItem="452" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="552" firstItem="453" firstAttribute="top" secondItem="452" secondAttribute="bottom" constant="8"/>
+                            <constraint id="578" firstItem="452" firstAttribute="width" secondItem="453" secondAttribute="width"/>
+                            <constraint id="718" firstItem="455" firstAttribute="width" secondItem="453" secondAttribute="width"/>
+                            <constraint id="719" firstItem="455" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="720" firstItem="455" firstAttribute="top" secondItem="453" secondAttribute="bottom" constant="16"/>
+                            <constraint id="721" firstItem="456" firstAttribute="top" secondItem="455" secondAttribute="bottom" constant="15"/>
+                            <constraint id="722" firstItem="456" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="739" firstItem="452" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="452" id="name-outlet-452"/>
