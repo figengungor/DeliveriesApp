@@ -7,7 +7,8 @@ namespace DeliveriesApp.Droid
     [Activity(Label = "DeliveriesApp", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        EditText nameEditText;
+        Button helloButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -16,11 +17,18 @@ namespace DeliveriesApp.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
+            nameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
+            helloButton = FindViewById<Button>(Resource.Id.helloButton);
 
-            button.Click += delegate { button.Text = $"{count++} clicks!"; };
+            //add event handler for button
+
+            helloButton.Click += HelloButton_Click;
+         
+        }
+
+        private void HelloButton_Click(object sender, System.EventArgs e)
+        {
+            Toast.MakeText(this, $"Hello {nameEditText.Text}", ToastLength.Short).Show();
         }
     }
 }
