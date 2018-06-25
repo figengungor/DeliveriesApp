@@ -16,21 +16,21 @@ namespace DeliveriesApp.iOS
         {
             base.ViewDidLoad();
 
-            helloButton.TouchUpInside += HelloButton_TouchUpInside;
+            signinButton.TouchUpInside += SigninButton_TouchUpInside;
+            registerButton.TouchUpInside += RegisterButton_TouchUpInside;
             
         }
 
-        private void HelloButton_TouchUpInside(object sender, EventArgs e)
+        private void RegisterButton_TouchUpInside(object sender, EventArgs e)
         {
-            //create an alert
-            var alert = UIAlertController.Create("Hello", $"Hello {nameTextField.Text}", UIAlertControllerStyle.Alert);
-
-            var cancelAction = UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null);
-
-            alert.AddAction(cancelAction);
-
-            PresentViewController(alert, true, null); //display alert, true for animation, null for completion handler
+          
         }
+
+        private void SigninButton_TouchUpInside(object sender, EventArgs e)
+        {
+            
+        }
+
 
         //is going to be executed when the app consuming more memory that allowed 
         public override void DidReceiveMemoryWarning() 
