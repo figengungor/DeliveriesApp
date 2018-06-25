@@ -44,11 +44,17 @@ namespace DeliveriesApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int helloButton = 2131034113;
-			
 			// aapt resource value: 0x7f050000
-			public const int nameEditText = 2131034112;
+			public const int emailEditText = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int passwordEditText = 2131034113;
+			
+			// aapt resource value: 0x7f050003
+			public const int registerButton = 2131034115;
+			
+			// aapt resource value: 0x7f050002
+			public const int signinButton = 2131034114;
 			
 			static Id()
 			{

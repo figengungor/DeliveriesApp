@@ -7,8 +7,10 @@ namespace DeliveriesApp.Droid
     [Activity(Label = "DeliveriesApp", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        EditText nameEditText;
-        Button helloButton;
+        EditText emailEditText;
+        EditText passwordEditText;
+        Button signinButton;
+        Button registerButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -17,18 +19,23 @@ namespace DeliveriesApp.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            nameEditText = FindViewById<EditText>(Resource.Id.nameEditText);
-            helloButton = FindViewById<Button>(Resource.Id.helloButton);
+            emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
+            passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
+            signinButton = FindViewById<Button>(Resource.Id.signinButton);
+            registerButton = FindViewById<Button>(Resource.Id.registerButton);
 
-            //add event handler for button
-
-            helloButton.Click += HelloButton_Click;
-         
+            signinButton.Click += SigninButton_Click;
+            registerButton.Click += RegisterButton_Click;
         }
 
-        private void HelloButton_Click(object sender, System.EventArgs e)
+        private void RegisterButton_Click(object sender, System.EventArgs e)
         {
-            Toast.MakeText(this, $"Hello {nameEditText.Text}", ToastLength.Short).Show();
+           
+        }
+
+        private void SigninButton_Click(object sender, System.EventArgs e)
+        {
+            
         }
     }
 }
