@@ -78,5 +78,71 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <scene sceneID="1030">
+            <objects>
+                <viewController id="1031" sceneMemberID="viewController" customClass="RegisterViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1028"/>
+                        <viewControllerLayoutGuide type="bottom" id="1029"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1032">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1035" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Password">
+                                <rect key="frame" x="20" y="353" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1040" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email address">
+                                <rect key="frame" x="20" y="315" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1045" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Confirm password">
+                                <rect key="frame" x="20" y="391" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1056" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="429" width="374" height="30"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.28627450980392155" green="0.52941176470588236" blue="0.98039215686274506" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.070588235294117646" green="0.33725490196078434" blue="0.94117647058823528" alpha="1"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1037" firstItem="1035" firstAttribute="centerY" secondItem="1032" secondAttribute="centerY"/>
+                            <constraint id="1038" firstItem="1035" firstAttribute="leading" secondItem="1032" secondAttribute="leadingMargin"/>
+                            <constraint id="1039" firstItem="1035" firstAttribute="trailing" secondItem="1032" secondAttribute="trailingMargin"/>
+                            <constraint id="1041" firstItem="1040" firstAttribute="width" secondItem="1035" secondAttribute="width"/>
+                            <constraint id="1042" firstItem="1040" firstAttribute="leading" secondItem="1032" secondAttribute="leadingMargin"/>
+                            <constraint id="1043" firstItem="1040" firstAttribute="trailing" secondItem="1032" secondAttribute="trailingMargin"/>
+                            <constraint id="1044" firstItem="1035" firstAttribute="top" secondItem="1040" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1053" firstItem="1045" firstAttribute="width" secondItem="1035" secondAttribute="width"/>
+                            <constraint id="1054" firstItem="1045" firstAttribute="leading" secondItem="1032" secondAttribute="leadingMargin"/>
+                            <constraint id="1055" firstItem="1045" firstAttribute="top" secondItem="1035" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1057" firstItem="1056" firstAttribute="width" secondItem="1035" secondAttribute="width"/>
+                            <constraint id="1058" firstItem="1056" firstAttribute="leading" secondItem="1032" secondAttribute="leadingMargin"/>
+                            <constraint id="1059" firstItem="1056" firstAttribute="top" secondItem="1045" secondAttribute="bottom" constant="8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="1040" id="name-outlet-1040"/>
+                        <outlet property="passwordTextField" destination="1041" id="name-outlet-1041"/>
+                        <outlet property="confirmPasswordTextField" destination="1045" id="name-outlet-1045"/>
+                        <outlet property="registerButton" destination="1053" id="name-outlet-1053"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1033" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="464" y="1"/>
+        </scene>
     </scenes>
 </document>
