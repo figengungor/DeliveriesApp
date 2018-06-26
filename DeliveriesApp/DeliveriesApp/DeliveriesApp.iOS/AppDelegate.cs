@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -9,6 +10,9 @@ namespace DeliveriesApp.iOS
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+        //pass the url of microsoft azure mobile app
+        //Go to azure portal and get that url from app service
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://deliveriesappfig.azurewebsites.net");
 
         public override UIWindow Window
         {

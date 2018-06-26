@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace DeliveriesApp.Droid
 {
@@ -12,6 +13,8 @@ namespace DeliveriesApp.Droid
         EditText passwordEditText;
         Button signinButton;
         Button registerButton;
+
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://deliveriesappfig.azurewebsites.net");
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
