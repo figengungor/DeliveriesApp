@@ -40,9 +40,7 @@
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
-                                <connections>
-                                    <action selector="SigninButton_TouchUpInside:" destination="BYZ-38-t0r" id="697" eventType="touchUpInside"/>
-                                </connections>
+                                <connections/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="456" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="302" y="409.5" width="57" height="30"/>
@@ -72,7 +70,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="452" id="name-outlet-452"/>
-                        <outlet property="passwordEditText" destination="453" id="name-outlet-453"/>
+                        <outlet property="passwordTextField" destination="453" id="name-outlet-453"/>
                         <outlet property="signinButton" destination="455" id="name-outlet-455"/>
                         <outlet property="registerButton" destination="456" id="name-outlet-456"/>
                     </connections>
@@ -140,9 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="1040" id="name-outlet-1040"/>
-                        <outlet property="passwordTextField" destination="1041" id="name-outlet-1041"/>
                         <outlet property="confirmPasswordTextField" destination="1045" id="name-outlet-1045"/>
-                        <outlet property="registerButton" destination="1053" id="name-outlet-1053"/>
                         <outlet property="registerButton" destination="1056" id="name-outlet-1056"/>
                         <outlet property="passwordTextField" destination="1035" id="name-outlet-1035"/>
                     </connections>

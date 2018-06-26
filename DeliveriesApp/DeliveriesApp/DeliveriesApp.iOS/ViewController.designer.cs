@@ -22,7 +22,7 @@ namespace DeliveriesApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField passwordEditText { get; set; }
+        UIKit.UITextField passwordTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -32,10 +32,6 @@ namespace DeliveriesApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton signinButton { get; set; }
 
-        [Action ("SigninButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SigninButton_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (emailTextField != null) {
@@ -43,9 +39,9 @@ namespace DeliveriesApp.iOS
                 emailTextField = null;
             }
 
-            if (passwordEditText != null) {
-                passwordEditText.Dispose ();
-                passwordEditText = null;
+            if (passwordTextField != null) {
+                passwordTextField.Dispose ();
+                passwordTextField = null;
             }
 
             if (registerButton != null) {
