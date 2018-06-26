@@ -15,9 +15,6 @@ namespace DeliveriesApp.iOS
         public override void ViewDidLoad() 
         {
             base.ViewDidLoad();
-
-            signinButton.TouchUpInside += SigninButton_TouchUpInside;
-            registerButton.TouchUpInside += RegisterButton_TouchUpInside;
             
         }
 
@@ -31,17 +28,6 @@ namespace DeliveriesApp.iOS
                 destinationViewController.emailAddress = emailTextField.Text;
             }
         }
-
-        private void RegisterButton_TouchUpInside(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void SigninButton_TouchUpInside(object sender, EventArgs e)
-        {
-            
-        }
-
 
         //is going to be executed when the app consuming more memory that allowed 
         public override void DidReceiveMemoryWarning() 
