@@ -8,7 +8,7 @@ using UIKit;
 
 namespace DeliveriesApp.iOS
 {
-    class User
+    public class User
     {
         public string Id { get; set; }
 

@@ -24,11 +24,12 @@ namespace DeliveriesApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint passwordTextField { get; set; }
+        UIKit.UITextField passwordTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint registerButton { get; set; }
+        UIKit.UIButton registerButton { get; set; }
+
 
         void ReleaseDesignerOutlets ()
         {
@@ -47,9 +48,9 @@ namespace DeliveriesApp.iOS
                 passwordTextField = null;
             }
 
-            if (registerButton != null) {
-                registerButton.Dispose ();
-                registerButton = null;
+            if (passwordTextField != null) {
+                passwordTextField.Dispose ();
+                passwordTextField = null;
             }
         }
     }

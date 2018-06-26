@@ -23,8 +23,8 @@ namespace DeliveriesApp.iOS
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
-
+            // If not required for your application you can safely delete this method    
+            CurrentPlatform.Init();
             return true;
         }
 
