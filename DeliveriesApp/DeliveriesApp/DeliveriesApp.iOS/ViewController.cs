@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Foundation;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -19,6 +19,17 @@ namespace DeliveriesApp.iOS
             signinButton.TouchUpInside += SigninButton_TouchUpInside;
             registerButton.TouchUpInside += RegisterButton_TouchUpInside;
             
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+
+            if(segue.Identifier == "registerSegue")
+            {
+                var destinationViewController = segue.DestinationViewController as RegisterViewController;
+                destinationViewController.emailAddress = emailTextField.Text;
+            }
         }
 
         private void RegisterButton_TouchUpInside(object sender, EventArgs e)

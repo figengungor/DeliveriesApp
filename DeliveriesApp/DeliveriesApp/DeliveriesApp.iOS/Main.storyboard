@@ -25,7 +25,7 @@
                                 <rect key="frame" x="20" y="315" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="453" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write your password">
                                 <rect key="frame" x="20" y="353" width="374" height="30"/>
@@ -50,7 +50,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="1537" destination="1031" kind="show"/>
+                                    <segue id="1537" destination="1031" kind="show" identifier="registerIdentifier"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +76,7 @@
                         <outlet property="signinButton" destination="455" id="name-outlet-455"/>
                         <outlet property="registerButton" destination="456" id="name-outlet-456"/>
                     </connections>
-                    <navigationItem id="1979" key="navigationItem"/>
+                    <navigationItem id="1979" key="navigationItem" title="Log In"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,19 +98,19 @@
                                 <rect key="frame" x="20" y="353" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1040" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email address">
                                 <rect key="frame" x="20" y="315" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1045" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Confirm password">
                                 <rect key="frame" x="20" y="391" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1056" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="429" width="374" height="30"/>
