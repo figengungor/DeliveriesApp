@@ -9,15 +9,16 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+
 using Android.Views;
-using Android.Widget;
 
 namespace DeliveriesApp.Droid
 {
     [Activity(Label = "TabsActivity")]
     public class TabsActivity : AppCompatActivity
     {
-        TabLayout tabLayout; 
+        TabLayout tabLayout;
+        Android.Support.V7.Widget.Toolbar toolbar;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,6 +26,9 @@ namespace DeliveriesApp.Droid
 
             // Create your application here
             SetContentView(Resource.Layout.Tabs);
+
+            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);      
+            SetSupportActionBar(toolbar);
 
             tabLayout = FindViewById<TabLayout>(Resource.Id.mainTabLayout);
             tabLayout.TabSelected += TabLayout_TabSelected;
@@ -53,6 +57,27 @@ namespace DeliveriesApp.Droid
             var transaction = SupportFragmentManager.BeginTransaction();
             transaction.Replace(Resource.Id.contentFrame, fragment);
             transaction.Commit();
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.tabsMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_add:
+                    StartActivity(typeof(NewDeliveryActivity));
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+              
+            }
+            
         }
     }
 }
