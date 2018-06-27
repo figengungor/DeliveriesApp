@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.NewApp.Android" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
 	<application android:label="DeliveriesApp"
-               android:theme="@style/Theme.AppCompat">
+               android:theme="@style/AppTheme">
     
   </application>
 </manifest>
