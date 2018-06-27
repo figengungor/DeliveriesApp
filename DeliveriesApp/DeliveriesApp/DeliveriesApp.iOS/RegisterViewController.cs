@@ -1,15 +1,12 @@
-﻿using Foundation;
-using System;
+﻿using System;
 using UIKit;
-using DeliveriesApp.iOS;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.iOS
 {
     public partial class RegisterViewController : UIViewController
     {
         public string emailAddress;
-        UIAlertController alert;
-
 
         public RegisterViewController(IntPtr handle) : base(handle)
         {
@@ -29,34 +26,27 @@ namespace DeliveriesApp.iOS
             if (string.IsNullOrEmpty(passwordTextField.Text) || string.IsNullOrEmpty(confirmPasswordTextField.Text)
             || string.IsNullOrEmpty(emailTextField.Text))
             {
-                alert = UIAlertController.Create("Error", "Fields cannot be empty!", UIAlertControllerStyle.Alert);
-                var cancelAction = UIAlertAction.Create("Ok", UIAlertActionStyle.Cancel, null);
-                alert.AddAction(cancelAction);
-                PresentViewController(alert, true, null);
+                DisplayAlert("Error", "Fields cannot be empty!");
                 return;
             }
 
-            if (passwordTextField.Text == confirmPasswordTextField.Text)
+            var result = await User.Register(emailTextField.Text, passwordTextField.Text, confirmPasswordTextField.Text);
+            if (result)
             {
-                var user = new User()
-                {
-                    Email = emailTextField.Text,
-                    Password = passwordTextField.Text
-                };
-
-                await AppDelegate.MobileService.GetTable<User>().InsertAsync(user);
-
-                alert = UIAlertController.Create("Error", "User inserted!", UIAlertControllerStyle.Alert);
-                alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Cancel, null));
-                PresentViewController(alert, true, null);
-
-                return;
+                DisplayAlert("Success", "User is registered!");
+            }
+            else
+            {
+                DisplayAlert("Error", "Passwords don't match!");
             }
 
-            alert = UIAlertController.Create("Error", "Password don't match", UIAlertControllerStyle.Alert);
+        }
+
+        private void DisplayAlert(string title, string message)
+        {
+            var alert = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
             alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Cancel, null));
             PresentViewController(alert, true, null);
-
         }
 
     }

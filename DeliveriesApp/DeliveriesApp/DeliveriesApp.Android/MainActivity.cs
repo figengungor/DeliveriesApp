@@ -2,8 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using Android.Content;
-using Microsoft.WindowsAzure.MobileServices;
-using System.Linq;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.Droid
 {
@@ -15,7 +14,7 @@ namespace DeliveriesApp.Droid
         Button signinButton;
         Button registerButton;
 
-        public static MobileServiceClient MobileService = new MobileServiceClient("https://deliveriesappfig.azurewebsites.net");
+       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,30 +44,14 @@ namespace DeliveriesApp.Droid
             var email = emailEditText.Text;
             var password = passwordEditText.Text;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            {
-                Toast.MakeText(this, "Fields cannot be empty!", ToastLength.Long).Show();
+            var result = await User.Login(email, password);
+
+            if (result) {
+                Toast.MakeText(this, "Logic success", ToastLength.Long).Show();
             }
             else
             {
-                //First() generates an exception if user doesnt exist, FirtOrDefault return null if user doesn't exist
-                var user = (await MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
-                if (user != null)
-                {
-                    if (user.Password == password)
-                    {
-                        Toast.MakeText(this, "Login succesfull!", ToastLength.Long).Show();
-                    }
-                    else
-                    {
-                        Toast.MakeText(this, "Email or password incorrect!", ToastLength.Long).Show();
-                    }
-                }
-                else
-                {
-                    Toast.MakeText(this, "Email or password incorrect!", ToastLength.Long).Show();
-                }
-
+                Toast.MakeText(this, "Couldn't login", ToastLength.Long).Show();
             }
 
         }
