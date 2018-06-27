@@ -9,7 +9,9 @@
     <Import_RootNamespace>DeliveriesApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Model\AzureHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AzureHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Delivery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DeliveryPerson.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
   </ItemGroup>
 </Project>

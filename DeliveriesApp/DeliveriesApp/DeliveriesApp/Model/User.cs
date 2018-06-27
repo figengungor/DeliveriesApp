@@ -58,8 +58,7 @@ namespace DeliveriesApp.Model
                     Password = password
                 };
 
-                await AzureHelper.MobileService.GetTable<User>().InsertAsync(user);
-                result = true;
+                result = await AzureHelper.Insert(user);
             }
             else
             {
