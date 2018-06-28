@@ -22,7 +22,7 @@ namespace DeliveriesApp.Droid
 
             // Create your fragment here
             var deliveries = await Delivery.GetDeliveries();
-            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
+            ListAdapter = new DeliveryAdapter(Activity, deliveries);
         }
     }
 }

@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="DeliveredFragment.cs" />
     <Compile Include="DeliveriesFragment.cs" />
+    <Compile Include="DeliveryAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="NewDeliveryActivity.cs" />
     <Compile Include="ProfileFragment.cs" />
@@ -186,6 +187,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_action_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\DeliveryCell.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\DeliveriesApp\DeliveriesApp.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
