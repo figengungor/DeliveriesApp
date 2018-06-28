@@ -7,6 +7,7 @@ namespace DeliveriesApp.iOS
 {
     public partial class ViewController : UIViewController
     {
+        bool hasLoggedIn = false;
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -27,13 +28,15 @@ namespace DeliveriesApp.iOS
             var result = await User.Login(email, password);
             if (result)
             {
-                DisplayAlert("Info", "Login succesfull!");
+                hasLoggedIn = true;
+                PerformSegue("loginSegue", this);
+                // DisplayAlert("Info", "Login succesfull!");            
             }
             else
             {
                 DisplayAlert("Error", "Couldn't login!");
             }
-
+           
         }
 
         private void DisplayAlert(string title, string message)
@@ -52,6 +55,15 @@ namespace DeliveriesApp.iOS
                 var destinationViewController = segue.DestinationViewController as RegisterViewController;
                 destinationViewController.emailAddress = emailTextField.Text;
             }
+        }
+
+        public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+        {
+            if (segueIdentifier == "loginSegue")
+            {
+                return hasLoggedIn;
+            }
+            return true;
         }
 
         //is going to be executed when the app consuming more memory that allowed 
