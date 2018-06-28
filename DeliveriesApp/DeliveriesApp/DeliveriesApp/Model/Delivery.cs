@@ -28,12 +28,22 @@ namespace DeliveriesApp.Model
 
         public static async Task<List<Delivery>> GetDeliveries()
         {
-            return await AzureHelper.MobileService.GetTable<Delivery>().ToListAsync();
+            return await AzureHelper.MobileService.GetTable<Delivery>().Where(d => d.Status != 2).ToListAsync();
+        }
+
+        public static async Task<List<Delivery>> GetDelivered()
+        {
+            return await AzureHelper.MobileService.GetTable<Delivery>().Where(d => d.Status == 2).ToListAsync();
         }
 
         public static async Task<bool> InsertDelivery(Delivery delivery)
         {
-           return await AzureHelper.Insert(delivery);
+            return await AzureHelper.Insert(delivery);
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} - {Status}";
         }
     }
 }
