@@ -196,36 +196,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4854" style="IBUITableViewCellStyleSubtitle" textLabel="6324" detailTextLabel="6325" reuseIdentifier="deliveryCell">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4854" id="4855">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6324">
-                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6325">
-                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="4850" id="4852"/>
                             <outlet property="delegate" destination="4850" id="4853"/>
                         </connections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8453" rowHeight="64" customClass="DeliveryTableViewCell" reuseIdentifier="deliveryCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8453" id="8454">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8455" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="16" y="0.0" width="45" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8456" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="16" y="29" width="49.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8457" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="301" y="0.0" width="93" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint id="8458" firstItem="8455" firstAttribute="leading" secondItem="8454" secondAttribute="leading" constant="16"/>
+                                        <constraint id="8459" firstItem="8456" firstAttribute="leading" secondItem="8454" secondAttribute="leading" constant="16"/>
+                                        <constraint id="8460" firstItem="8456" firstAttribute="top" secondItem="8455" secondAttribute="bottom" constant="8.5"/>
+                                        <constraint id="8461" firstItem="8454" firstAttribute="trailing" secondItem="8457" secondAttribute="trailing" constant="20"/>
+                                        <constraint id="8462" firstItem="8457" firstAttribute="leading" secondItem="8455" secondAttribute="trailing" constant="10" relation="greaterThanOrEqual"/>
+                                        <constraint id="8463" firstItem="8457" firstAttribute="leading" secondItem="8456" secondAttribute="trailing" constant="10" relation="greaterThanOrEqual"/>
+                                        <constraint id="8464" firstItem="8455" firstAttribute="top" secondItem="8454" secondAttribute="top"/>
+                                        <constraint id="8466" firstItem="8457" firstAttribute="top" secondItem="8454" secondAttribute="top"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="8455" id="name-outlet-8455"/>
+                                    <outlet property="statusLabel" destination="8456" id="name-outlet-8456"/>
+                                    <outlet property="coordinatesLabel" destination="8457" id="name-outlet-8457"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Deliveries" id="4969" image="deliveries.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

@@ -30,21 +30,22 @@ namespace DeliveriesApp.iOS
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            var cell = tableView.DequeueReusableCell("deliveryCell");
+            var cell = tableView.DequeueReusableCell("deliveryCell") as DeliveryTableViewCell;
 
             var delivery = deliveries[indexPath.Row];
 
-            cell.TextLabel.Text = delivery.Name;
+            cell.nameLabel.Text = delivery.Name;
+            cell.coordinatesLabel.Text = $"{delivery.DestinationLatitude}, {delivery.DestinationLongitude}";
             switch (delivery.Status)
             {
                 case 0:
-                    cell.DetailTextLabel.Text = "Waiting delivery person";
+                    cell.statusLabel.Text = "Waiting delivery person";
                     break;
                 case 1:
-                    cell.DetailTextLabel.Text = "In delivery";
+                    cell.statusLabel.Text = "In delivery";
                     break;
                 case 2:
-                    cell.DetailTextLabel.Text = "Delivered";
+                    cell.statusLabel.Text = "Delivered";
                     break;
             }
 

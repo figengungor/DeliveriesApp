@@ -138,6 +138,10 @@
     <Compile Include="DeliveriesViewController.designer.cs">
       <DependentUpon>DeliveriesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeliveryTableViewCell.cs" />
+    <Compile Include="DeliveryTableViewCell.designer.cs">
+      <DependentUpon>DeliveryTableViewCell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="MainTabBarController.cs" />
